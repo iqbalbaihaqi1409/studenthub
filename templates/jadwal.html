@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jadwal - StudentHub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🎓 StudentHub
+        </div>
+
+        <ul class="menu">
+
+            <li><a href="/">🏠 Dashboard</a></li>
+            <li><a href="/jadwal" class="active">📅 Jadwal</a></li>
+            <li><a href="/tugas">📝 Tugas</a></li>
+            <li><a href="/materi">📚 Materi</a></li>
+            <li><a href="/nilai">📊 Nilai</a></li>
+            <li><a href="/keuangan">💰 Keuangan</a></li>
+            <li><a href="/pengaturan">⚙️ Pengaturan</a></li>
+
+        </ul>
+
+    </aside>
+
+
+    <main class="main">
+
+        <div class="header">
+
+            <h1>📅 Jadwal Kuliah</h1>
+
+            <p>
+                Jadwal perkuliahan kamu.
+            </p>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>Senin</h2>
+
+            <div class="schedule-item">
+                <div>
+                    <span class="time">08:00</span>
+                    <strong>Elektronika</strong>
+                    <p>Ruang E-201</p>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div>
+                    <span class="time">10:00</span>
+                    <strong>Matematika Teknik</strong>
+                    <p>Ruang A-103</p>
+                </div>
+            </div>
+
+            <div class="schedule-item">
+                <div>
+                    <span class="time">13:00</span>
+                    <strong>Praktikum Elektronika</strong>
+                    <p>Laboratorium Elektronika</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
