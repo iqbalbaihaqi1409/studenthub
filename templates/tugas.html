@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tugas - StudentHub</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🎓 StudentHub
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="/">🏠 Dashboard</a>
+            </li>
+
+            <li>
+                <a href="/jadwal">📅 Jadwal</a>
+            </li>
+
+            <li>
+                <a href="/tugas" class="active">📝 Tugas</a>
+            </li>
+
+            <li>
+                <a href="#">📚 Materi</a>
+            </li>
+
+            <li>
+                <a href="#">📊 Nilai</a>
+            </li>
+
+            <li>
+                <a href="#">💰 Keuangan</a>
+            </li>
+
+            <li>
+                <a href="#">⚙️ Pengaturan</a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <div class="header">
+
+            <h1>📝 Daftar Tugas</h1>
+
+            <p>
+                Kelola tugas kuliah dan deadline kamu.
+            </p>
+
+        </div>
+
+
+        <!-- TUGAS 1 -->
+        <div class="section">
+
+            <div class="deadline-item">
+
+                <div>
+                    <strong>Laporan Praktikum Elektronika</strong>
+
+                    <p>
+                        Elektronika • Deadline besok
+                    </p>
+                </div>
+
+                <span class="deadline-date">
+                    Besok
+                </span>
+
+            </div>
+
+
+            <!-- TUGAS 2 -->
+            <div class="deadline-item">
+
+                <div>
+                    <strong>Tugas Matematika Teknik</strong>
+
+                    <p>
+                        Matematika Teknik • Deadline 3 hari
+                    </p>
+                </div>
+
+                <span class="deadline-date">
+                    3 hari
+                </span>
+
+            </div>
+
+
+            <!-- TUGAS 3 -->
+            <div class="deadline-item">
+
+                <div>
+                    <strong>Resume Materi Elektronika</strong>
+
+                    <p>
+                        Elektronika • Deadline 5 hari
+                    </p>
+                </div>
+
+                <span class="deadline-date">
+                    5 hari
+                </span>
+
+            </div>
+
+
+            <!-- TUGAS 4 -->
+            <div class="deadline-item">
+
+                <div>
+                    <strong>Presentasi Kelompok</strong>
+
+                    <p>
+                        Bahasa Indonesia • Deadline 7 hari
+                    </p>
+                </div>
+
+                <span class="deadline-date">
+                    7 hari
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

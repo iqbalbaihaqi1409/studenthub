@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi - StudentHub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🎓 StudentHub
+        </div>
+
+        <ul class="menu">
+            <li>
+                <a href="/">🏠 Dashboard</a>
+            </li>
+
+            <li>
+                <a href="/jadwal">📅 Jadwal</a>
+            </li>
+
+            <li>
+                <a href="/tugas">📝 Tugas</a>
+            </li>
+
+            <li>
+                <a href="/materi" class="active">📚 Materi</a>
+            </li>
+
+            <li>
+                <a href="/nilai">📊 Nilai</a>
+            </li>
+
+            <li>
+                <a href="/keuangan">💰 Keuangan</a>
+            </li>
+
+            <li>
+                <a href="/pengaturan">⚙️ Pengaturan</a>
+            </li>
+        </ul>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <div class="section">
+
+            <h1>📚 Materi Kuliah</h1>
+            <p>Daftar materi perkuliahan StudentHub</p>
+
+            <div class="deadline-item">
+                <div>
+                    <strong>⚡ Elektronika</strong>
+                    <p>
+                        Materi dioda, penyearah gelombang,
+                        transistor, dan rangkaian elektronika.
+                    </p>
+                </div>
+
+                <button>Lihat Materi</button>
+            </div>
+
+
+            <div class="deadline-item">
+                <div>
+                    <strong>📐 Matematika Teknik</strong>
+                    <p>
+                        Materi persamaan linear, diferensial,
+                        transformasi, dan matematika teknik.
+                    </p>
+                </div>
+
+                <button>Lihat Materi</button>
+            </div>
+
+
+            <div class="deadline-item">
+                <div>
+                    <strong>💻 Pemrograman</strong>
+                    <p>
+                        Materi dasar Python, HTML, CSS,
+                        dan pengembangan website.
+                    </p>
+                </div>
+
+                <button>Lihat Materi</button>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

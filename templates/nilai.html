@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilai - StudentHub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🎓 StudentHub
+        </div>
+
+        <ul class="menu">
+            <li><a href="/">🏠 Dashboard</a></li>
+            <li><a href="/jadwal">📅 Jadwal</a></li>
+            <li><a href="/tugas">📝 Tugas</a></li>
+            <li><a href="/materi">📚 Materi</a></li>
+            <li><a href="/nilai" class="active">📊 Nilai</a></li>
+            <li><a href="/keuangan">💰 Keuangan</a></li>
+            <li><a href="/pengaturan">⚙️ Pengaturan</a></li>
+        </ul>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="section">
+
+            <h1>📊 Nilai Akademik</h1>
+            <p>Daftar nilai mata kuliah StudentHub</p>
+
+            <div class="deadline-item">
+                <div>
+                    <strong>Elektronika</strong>
+                    <p>Nilai: A &nbsp; | &nbsp; Bobot: 4.00</p>
+                </div>
+            </div>
+
+            <div class="deadline-item">
+                <div>
+                    <strong>Matematika Teknik</strong>
+                    <p>Nilai: A- &nbsp; | &nbsp; Bobot: 3.75</p>
+                </div>
+            </div>
+
+            <div class="deadline-item">
+                <div>
+                    <strong>Pemrograman</strong>
+                    <p>Nilai: A &nbsp; | &nbsp; Bobot: 4.00</p>
+                </div>
+            </div>
+
+            <div class="deadline-item">
+                <div>
+                    <strong>Praktikum Elektronika</strong>
+                    <p>Nilai: B+ &nbsp; | &nbsp; Bobot: 3.50</p>
+                </div>
+            </div>
+
+            <div class="deadline-item">
+                <div>
+                    <strong>IPK Semester</strong>
+                    <p><strong>3.72</strong></p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
