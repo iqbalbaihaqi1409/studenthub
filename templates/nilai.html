@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,76 +7,41 @@
     <title>Nilai - StudentHub</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
-
-<div class="container">
-
-    <aside class="sidebar">
-
-        <div class="logo">
-            🎓 StudentHub
-        </div>
-
-        <ul class="menu">
-            <li><a href="/">🏠 Dashboard</a></li>
-            <li><a href="/jadwal">📅 Jadwal</a></li>
-            <li><a href="/tugas">📝 Tugas</a></li>
-            <li><a href="/materi">📚 Materi</a></li>
-            <li><a href="/nilai" class="active">📊 Nilai</a></li>
-            <li><a href="/keuangan">💰 Keuangan</a></li>
-            <li><a href="/pengaturan">⚙️ Pengaturan</a></li>
-        </ul>
-
-    </aside>
-
-    <main class="main">
-
-        <div class="section">
-
-            <h1>📊 Nilai Akademik</h1>
-            <p>Daftar nilai mata kuliah StudentHub</p>
-
-            <div class="deadline-item">
-                <div>
-                    <strong>Elektronika</strong>
-                    <p>Nilai: A &nbsp; | &nbsp; Bobot: 4.00</p>
-                </div>
-            </div>
-
-            <div class="deadline-item">
-                <div>
-                    <strong>Matematika Teknik</strong>
-                    <p>Nilai: A- &nbsp; | &nbsp; Bobot: 3.75</p>
-                </div>
-            </div>
-
-            <div class="deadline-item">
-                <div>
-                    <strong>Pemrograman</strong>
-                    <p>Nilai: A &nbsp; | &nbsp; Bobot: 4.00</p>
-                </div>
-            </div>
-
-            <div class="deadline-item">
-                <div>
-                    <strong>Praktikum Elektronika</strong>
-                    <p>Nilai: B+ &nbsp; | &nbsp; Bobot: 3.50</p>
-                </div>
-            </div>
-
-            <div class="deadline-item">
-                <div>
-                    <strong>IPK Semester</strong>
-                    <p><strong>3.72</strong></p>
-                </div>
-            </div>
-
-        </div>
-
-    </main>
-
+<div class="sidebar">
+    <h2>🎓 StudentHub</h2>
+    <a href="/">🏠 Dashboard</a>
+    <a href="/jadwal">📅 Jadwal</a>
+    <a href="/tugas">📝 Tugas</a>
+    <a href="/materi">📚 Materi</a>
+    <a class="active" href="/nilai">📊 Nilai</a>
+    <a href="/keuangan">💰 Keuangan</a>
+    <a href="/pengaturan">⚙️ Pengaturan</a>
 </div>
 
+<main class="main-content">
+    <h1>📊 Nilai Akademik</h1>
+    <p class="subtitle">Contoh rekap nilai perkuliahan. Sesuaikan dengan nilai sebenarnya.</p>
+
+    <section class="card">
+        <table>
+            <thead>
+                <tr><th>Mata Kuliah</th><th>Nilai</th><th>Huruf</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Elektronika</td><td>85</td><td>A</td></tr>
+                <tr><td>Matematika Teknik</td><td>80</td><td>A-</td></tr>
+                <tr><td>Pemrograman</td><td>88</td><td>A</td></tr>
+                <tr><td>Rangkaian Listrik</td><td>78</td><td>B+</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="card">
+        <h2>IPK Contoh</h2>
+        <p class="stat-number">3,72</p>
+        <p class="muted">Angka contoh untuk tampilan, bukan hasil perhitungan akademik.</p>
+    </section>
+</main>
 </body>
 </html>

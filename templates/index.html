@@ -1,232 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>StudentHub - Dashboard</title>
-
+    <title>Dashboard - StudentHub</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
-
-    <div class="container">
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-
-            <div class="logo">
-                🎓 StudentHub
-            </div>
-
-            <ul class="menu">
-
-                <li>
-                    <a href="#" class="active">🏠 Dashboard</a>
-                </li>
-
-                <li>
-                    <a href="/jadwal">📅 Jadwal</a>
-                </li>
-
-                <li>
-                    <a href="/tugas">📝 Tugas</a>
-                </li>
-
-                <li>
-                    <a href="/materi">📚 Materi</a>
-                </li>
-
-                <li>
-                    <a href="/nilai">📊 Nilai</a>
-                </li>
-
-                <li>
-                    <a href="/keuangan">💰 Keuangan</a>
-                </li>
-
-                <li>
-                    <a href="/pengaturan">⚙️ Pengaturan</a>
-                </li>
-
-            </ul>
-
-        </aside>
-
-
-        <!-- MAIN CONTENT -->
-        <main class="main">
-
-            <!-- HEADER -->
-            <div class="header">
-
-                <h1>Selamat Datang 👋</h1>
-
-                <p>
-                    Berikut ringkasan aktivitas perkuliahan kamu hari ini.
-                </p>
-
-            </div>
-
-
-            <!-- STATISTICS -->
-            <div class="cards">
-
-                <div class="card">
-
-                    <div class="card-title">
-                        IPK
-                    </div>
-
-                    <div class="card-value">
-                        3.72
-                    </div>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="card-title">
-                        Tugas Belum Selesai
-                    </div>
-
-                    <div class="card-value">
-                        5
-                    </div>
-
-                </div>
-
-
-                <div class="card">
-
-                    <div class="card-title">
-                        Kehadiran
-                    </div>
-
-                    <div class="card-value">
-                        92%
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- JADWAL -->
-            <div class="section">
-
-                <div class="section-header">
-                    <h2>📅 Jadwal Hari Ini</h2>
-                    <a href="#" class="view-all">Lihat semua</a>
-                </div>
-
-                <div class="schedule-item">
-                    <div>
-                        <span class="time">08:00</span>
-                        <strong>Elektronika</strong>
-                        <p>Ruang E-201</p>
-                    </div>
-
-                    <span class="status active-status">
-                        Sedang Berlangsung
-                    </span>
-                </div>
-
-                <div class="schedule-item">
-                    <div>
-                        <span class="time">10:00</span>
-                        <strong>Matematika Teknik</strong>
-                        <p>Ruang A-103</p>
-                    </div>
-
-                    <span class="status">
-                        Mendatang
-                    </span>
-                </div>
-
-                <div class="schedule-item">
-                    <div>
-                        <span class="time">13:00</span>
-                        <strong>Praktikum Elektronika</strong>
-                        <p>Laboratorium Elektronika</p>
-                    </div>
-
-                    <span class="status">
-                        Mendatang
-                    </span>
-                </div>
-
-            </div>
-
-
-            <!-- DEADLINE -->
-            <div class="section">
-
-                <div class="section-header">
-                    <h2>📝 Deadline Terdekat</h2>
-                    <a href="#" class="view-all">Lihat semua</a>
-                </div>
-
-                <div class="deadline-item">
-                    <div>
-                        <strong>Laporan Praktikum</strong>
-                        <p>Elektronika</p>
-                    </div>
-
-                    <span class="deadline-date">
-                        Besok
-                    </span>
-                </div>
-
-                <div class="deadline-item">
-                    <div>
-                        <strong>Tugas Matematika</strong>
-                        <p>Matematika Teknik</p>
-                    </div>
-
-                    <span class="deadline-date">
-                        3 hari
-                    </span>
-                </div>
-
-                <div class="deadline-item">
-                    <div>
-                        <strong>Resume Materi</strong>
-                        <p>Elektronika</p>
-                    </div>
-
-                    <span class="deadline-date">
-                        5 hari
-                    </span>
-                </div>
-
-            </div>
-
-
-            <!-- PROGRESS -->
-            <div class="section">
-
-                <h2>📚 Progress Semester</h2>
-
-                <p style="margin-bottom: 10px;">
-                    78% selesai
-                </p>
-
-                <div class="progress-bar">
-
-                    <div class="progress"></div>
-
-                </div>
-
-            </div>
-
-        </main>
-
+<div class="sidebar">
+    <h2>🎓 StudentHub</h2>
+    <a class="active" href="/">🏠 Dashboard</a>
+    <a href="/jadwal">📅 Jadwal</a>
+    <a href="/tugas">📝 Tugas</a>
+    <a href="/materi">📚 Materi</a>
+    <a href="/nilai">📊 Nilai</a>
+    <a href="/keuangan">💰 Keuangan</a>
+    <a href="/pengaturan">⚙️ Pengaturan</a>
+</div>
+
+<main class="main-content">
+    <h1>Selamat Datang di StudentHub 👋</h1>
+    <p class="subtitle">Kelola kegiatan kuliahmu dalam satu tempat.</p>
+
+    <div class="stats">
+        <div class="card">
+            <p class="muted">Total Tugas</p>
+            <div class="stat-number">{{ total }}</div>
+        </div>
+        <div class="card">
+            <p class="muted">Belum Selesai</p>
+            <div class="stat-number">{{ belum_selesai }}</div>
+        </div>
+        <div class="card">
+            <p class="muted">Tugas Selesai</p>
+            <div class="stat-number">{{ selesai }}</div>
+        </div>
     </div>
 
-</body>
+    <section class="card">
+        <h2>📌 Tugas Terbaru</h2>
+        {% if tugas_terbaru %}
+            {% for tugas in tugas_terbaru %}
+            <div class="task-item">
+                <h3>{{ tugas['nama'] }}</h3>
+                <p>Mata kuliah: {{ tugas['matkul'] }}</p>
+                <p>Deadline: {{ tugas['deadline'] }}</p>
+                <span class="status {% if tugas['status'] == 'Selesai' %}done{% endif %}">
+                    {{ tugas['status'] }}
+                </span>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="empty">Belum ada tugas. Tambahkan tugas pertamamu!</p>
+        {% endif %}
+        <a class="button" href="/tugas">Kelola Tugas</a>
+    </section>
 
+    <section class="card">
+        <h2>🚀 Menu Cepat</h2>
+        <p><a href="/jadwal">Lihat jadwal kuliah</a></p>
+        <p><a href="/materi">Buka materi kuliah</a></p>
+        <p><a href="/nilai">Lihat nilai</a></p>
+    </section>
+</main>
+</body>
 </html>

@@ -1,154 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Tugas - StudentHub</title>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
-
-<div class="container">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-
-        <div class="logo">
-            🎓 StudentHub
-        </div>
-
-        <ul class="menu">
-
-            <li>
-                <a href="/">🏠 Dashboard</a>
-            </li>
-
-            <li>
-                <a href="/jadwal">📅 Jadwal</a>
-            </li>
-
-            <li>
-                <a href="/tugas" class="active">📝 Tugas</a>
-            </li>
-
-            <li>
-                <a href="#">📚 Materi</a>
-            </li>
-
-            <li>
-                <a href="#">📊 Nilai</a>
-            </li>
-
-            <li>
-                <a href="#">💰 Keuangan</a>
-            </li>
-
-            <li>
-                <a href="#">⚙️ Pengaturan</a>
-            </li>
-
-        </ul>
-
-    </aside>
-
-
-    <!-- MAIN -->
-    <main class="main">
-
-        <div class="header">
-
-            <h1>📝 Daftar Tugas</h1>
-
-            <p>
-                Kelola tugas kuliah dan deadline kamu.
-            </p>
-
-        </div>
-
-
-        <!-- TUGAS 1 -->
-        <div class="section">
-
-            <div class="deadline-item">
-
-                <div>
-                    <strong>Laporan Praktikum Elektronika</strong>
-
-                    <p>
-                        Elektronika • Deadline besok
-                    </p>
-                </div>
-
-                <span class="deadline-date">
-                    Besok
-                </span>
-
-            </div>
-
-
-            <!-- TUGAS 2 -->
-            <div class="deadline-item">
-
-                <div>
-                    <strong>Tugas Matematika Teknik</strong>
-
-                    <p>
-                        Matematika Teknik • Deadline 3 hari
-                    </p>
-                </div>
-
-                <span class="deadline-date">
-                    3 hari
-                </span>
-
-            </div>
-
-
-            <!-- TUGAS 3 -->
-            <div class="deadline-item">
-
-                <div>
-                    <strong>Resume Materi Elektronika</strong>
-
-                    <p>
-                        Elektronika • Deadline 5 hari
-                    </p>
-                </div>
-
-                <span class="deadline-date">
-                    5 hari
-                </span>
-
-            </div>
-
-
-            <!-- TUGAS 4 -->
-            <div class="deadline-item">
-
-                <div>
-                    <strong>Presentasi Kelompok</strong>
-
-                    <p>
-                        Bahasa Indonesia • Deadline 7 hari
-                    </p>
-                </div>
-
-                <span class="deadline-date">
-                    7 hari
-                </span>
-
-            </div>
-
-        </div>
-
-    </main>
-
+<div class="sidebar">
+    <h2>🎓 StudentHub</h2>
+    <a href="/">🏠 Dashboard</a>
+    <a href="/jadwal">📅 Jadwal</a>
+    <a class="active" href="/tugas">📝 Tugas</a>
+    <a href="/materi">📚 Materi</a>
+    <a href="/nilai">📊 Nilai</a>
+    <a href="/keuangan">💰 Keuangan</a>
+    <a href="/pengaturan">⚙️ Pengaturan</a>
 </div>
 
-</body>
+<main class="main-content">
+    <h1>📝 Daftar Tugas</h1>
+    <p class="subtitle">Catat deadline dan pantau penyelesaian tugas kuliah.</p>
 
+    <section class="card">
+        <h2>➕ Tambah Tugas</h2>
+        <form action="{{ url_for('tugas') }}" method="POST">
+            <label for="nama">Nama Tugas</label>
+            <input id="nama" name="nama" required
+                   placeholder="Contoh: Laporan Praktikum">
+
+            <label for="matkul">Mata Kuliah</label>
+            <input id="matkul" name="matkul" required
+                   placeholder="Contoh: Elektronika">
+
+            <label for="deadline">Deadline</label>
+            <input id="deadline" name="deadline" type="date" required>
+
+            <button type="submit">➕ Tambah Tugas</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>📋 Daftar Tugas Kamu</h2>
+
+        {% if tugas_list %}
+            {% for tugas in tugas_list %}
+            <article class="task-item">
+                <h3>{{ tugas['nama'] }}</h3>
+                <p>📚 Mata Kuliah: {{ tugas['matkul'] }}</p>
+                <p>📅 Deadline: {{ tugas['deadline'] }}</p>
+
+                <span class="status {% if tugas['status'] == 'Selesai' %}done{% endif %}">
+                    {{ tugas['status'] }}
+                </span>
+
+                <div class="task-actions">
+                    {% if tugas['status'] != 'Selesai' %}
+                    <form action="{{ url_for('tugas_selesai', id=tugas['id']) }}"
+                          method="POST">
+                        <button class="success" type="submit">
+                            ✅ Tandai Selesai
+                        </button>
+                    </form>
+                    {% endif %}
+
+                    <form action="{{ url_for('hapus_tugas', id=tugas['id']) }}"
+                          method="POST"
+                          onsubmit="return confirm('Yakin ingin menghapus tugas ini?')">
+                        <button class="danger" type="submit">🗑️ Hapus Tugas</button>
+                    </form>
+                </div>
+            </article>
+            {% endfor %}
+        {% else %}
+            <p class="empty">Belum ada tugas. Silakan tambahkan tugas di atas.</p>
+        {% endif %}
+    </section>
+</main>
+</body>
 </html>
